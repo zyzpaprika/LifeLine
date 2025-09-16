@@ -3,6 +3,7 @@
     "name": "healthline_v0",
     "slug": "healthline_v0",
     "version": "1.0.0",
+    "main": "expo-router/entry",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "healthlinev0",
