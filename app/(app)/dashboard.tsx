@@ -13,9 +13,7 @@ import QRCode from 'react-native-qrcode-svg';
 import { useAuth } from '../../context/AuthContext';
 
 export default function DashboardPage() {
-  
-  const API_URL = "http://192.168.0.106:5000/patients"; 
-  
+  const API_URL = `${process.env.EXPO_PUBLIC_API_URL}/patients`;
   const { user, logout } = useAuth();
 
   const [name, setName] = useState("");

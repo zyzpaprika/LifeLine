@@ -4,8 +4,8 @@ import { ActivityIndicator, Alert, SafeAreaView, StatusBar, StyleSheet, Text, Te
 import { useAuth } from '../../context/AuthContext';
 
 export default function LoginPage() {
-  const API_URL = "http://192.168.0.106:5000"; 
-  
+  const API_URL = process.env.EXPO_PUBLIC_API_URL; 
+
   const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

@@ -1,17 +1,16 @@
 import { useRouter } from 'expo-router';
 import React, { useState } from 'react';
 import {
-    FlatList,
-    KeyboardAvoidingView, Platform,
-    SafeAreaView, StatusBar,
-    StyleSheet,
-    Text, TextInput, TouchableOpacity,
-    View
+  FlatList,
+  KeyboardAvoidingView, Platform,
+  SafeAreaView, StatusBar,
+  StyleSheet,
+  Text, TextInput, TouchableOpacity,
+  View
 } from 'react-native';
 
 export default function AIChatPage() {
-  // 👈 IMPORTANT: Replace with your actual computer IP
-  const API_URL = "http://192.168.0.106:5000/chat"; 
+  const API_URL = `${process.env.EXPO_PUBLIC_API_URL}/chat`; 
 
   const router = useRouter();
   const [message, setMessage] = useState('');
