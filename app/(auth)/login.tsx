@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, SafeAreaView, StatusBar, Alert, ActivityIndicator } from 'react-native';
-import { useAuth } from '../../context/AuthContext';
 import { Link } from 'expo-router';
+import React, { useState } from 'react';
+import { ActivityIndicator, Alert, SafeAreaView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { useAuth } from '../../context/AuthContext';
 
 export default function LoginPage() {
-  // 👈 IMPORTANT: Replace <YOUR-IP> with your computer's IP address
-  const API_URL = "http://192.168.0.107:5000"; 
+  const API_URL = "http://192.168.0.106:5000"; 
   
   const { login } = useAuth();
   const [email, setEmail] = useState('');

@@ -1,9 +1,10 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
 import { useRouter } from 'expo-router';
+import React, { createContext, ReactNode, useContext, useState } from 'react';
 
 interface User {
   id: number;
   email: string;
+  role: 'doctor' | 'patient'; 
 }
 
 interface AuthContextType {
