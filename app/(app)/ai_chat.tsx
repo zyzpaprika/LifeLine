@@ -1,5 +1,5 @@
 import { useRouter } from 'expo-router';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   FlatList,
   KeyboardAvoidingView, Platform,
@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 export default function AIChatPage() {
-  const API_URL = `${process.env.EXPO_PUBLIC_API_URL}/chat`; 
+  const API_URL = "http://192.168.X.X:5000/chat"; 
 
   const router = useRouter();
   const [message, setMessage] = useState('');
