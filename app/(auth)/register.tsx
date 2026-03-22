@@ -1,9 +1,9 @@
 import { Link, useRouter } from 'expo-router';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ActivityIndicator, Alert, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function RegisterPage() {
-  const API_URL = process.env.EXPO_PUBLIC_API_URL;
+  const API_URL = "http://localhost:5000"; // process.env.EXPO_PUBLIC_API_URL;
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('patient'); // 👈 Default to patient
@@ -21,11 +21,13 @@ export default function RegisterPage() {
         body: JSON.stringify({ email, password, role }), // 👈 Send role
       });
       // ... (Rest of logic is the same)
+      const data = await response.json();
       if (response.ok) {
         Alert.alert('Success', 'Account created! Please log in.');
         router.push('/login');
       } else {
-         Alert.alert('Error', 'Registration failed');
+         
+         Alert.alert('Error', data.error || 'Registration failed');
       }
     } catch (e) { console.error(e); } 
     finally { setLoading(false); }
