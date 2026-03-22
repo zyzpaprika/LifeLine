@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// key
+// key secret gemini
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // Using the model that worked for you
